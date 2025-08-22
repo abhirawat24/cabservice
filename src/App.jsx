@@ -1,11 +1,18 @@
 import './App.css'
+import Footer from './components/Footer'
+import HeroSection from './components/HeroSection'
+import Navbar from './components/Navbar'
+import Register from './components/Register'
 
 function App() {
 
 
   return (
     <>
-    <h1>hello</h1>
+    <Navbar/>
+    <HeroSection/>
+    <Register/>
+    <Footer/>
     </>
   )
 }
