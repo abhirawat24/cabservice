@@ -27,7 +27,7 @@ const HeroSection = () => {
       {/* Right Image */}
       <div className="flex-1 mt-8 md:mt-0 flex justify-center">
         <img
-          src="/taxi.jpeg"
+          src="/innov.png"
           alt="Taxi Service"
           className="w-72 md:w-[420px] drop-shadow-2xl"
         />
