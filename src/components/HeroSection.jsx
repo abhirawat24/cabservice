@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 overflow-hidden">
+    <section className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-20">
       {/* Left Content */}
       <motion.div
         initial={{ x: -200, opacity: 0 }}
@@ -37,11 +37,13 @@ const HeroSection = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 mt-8 md:mt-0 flex justify-center bg-black"
       >
+        <div>
         <img
           src="/heroSection1.png"
           alt="Taxi Service"
-          className="w-72 md:w-[420px] drop-shadow-2xl"
+          className="max-w-[280px] sm:max-w-[320px] md:max-w-[420px] w-full h-auto object-contain drop-shadow-2xl"
         />
+        </div>
       </motion.div>
     </section>
   );
