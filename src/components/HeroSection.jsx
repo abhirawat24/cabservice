@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16">
+    <section className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 overflow-hidden">
       {/* Left Content */}
-      <div className="flex-1 flex flex-col gap-6 text-center md:text-left">
+      <motion.div
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex-1 flex flex-col gap-6 text-center md:text-left"
+      >
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           Reliable <span className="text-yellow-400">Taxi Service</span> <br />
           in Lake City
@@ -22,16 +28,21 @@ const HeroSection = () => {
             Learn More
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right Image */}
-      <div className="flex-1 mt-8 md:mt-0 flex justify-center bg-black ">
+      <motion.div
+        initial={{ x: 200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex-1 mt-8 md:mt-0 flex justify-center bg-black"
+      >
         <img
-          src="/innov.png"
+          src="/heroSection1.png"
           alt="Taxi Service"
           className="w-72 md:w-[420px] drop-shadow-2xl"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
