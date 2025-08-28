@@ -1,5 +1,6 @@
 import { FaWhatsapp } from 'react-icons/fa'
 import './App.css'
+import Preloader from './components/Preloader'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import Vehicles from './components/Vehicles'
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+    <Preloader/>
     <div className='relative'>
     <Navbar/>
     <HeroSection/>
@@ -20,7 +22,6 @@ function App() {
     <Locations/>
     <About/>
     <Contact/>
-    {/* <Register/> */}
     <Footer/>
 
     <div className="fixed right-6 bottom-6">

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
@@ -25,14 +26,14 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-yellow-400 text-black font-semibold px-6 py-3 relative overflow-hidden group">
+            <button className="px-6 py-3 font-semibold rounded-full border-2 border-yellow-400 bg-yellow-400 text-black cursor-pointer shadow-md hover:bg-black hover:text-yellow-400 transition-all duration-300">
               Book Now on WhatsApp
-              <span className="absolute top-0 right-[-8px] bottom-0 w-2 bg-black skew-x-12 group-hover:bg-white"></span>
             </button>
           </a>
 
           <a href="tel:+917500769531">
-            <button className="border border-yellow-400 text-yellow-400 px-6 py-3 font-semibold hover:bg-yellow-400 hover:text-black transition">
+            <button className="flex flex-row items-center gap-2 border-2 border-yellow-400 text-yellow-400 px-6 py-3 font-semibold rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300">
+              <FaPhoneAlt className="text-lg" />
               Call Us
             </button>
           </a>
