@@ -20,13 +20,22 @@ const HeroSection = () => {
           Available 24/7 for your convenience.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <button className="bg-yellow-400 text-black font-semibold px-6 py-3 relative overflow-hidden group">
-            Book Now
-            <span className="absolute top-0 right-[-8px] bottom-0 w-2 bg-black skew-x-12 group-hover:bg-white"></span>
-          </button>
-          <button className="border border-yellow-400 text-yellow-400 px-6 py-3 font-semibold hover:bg-yellow-400 hover:text-black transition">
-            Learn More
-          </button>
+          <a
+            href="https://api.whatsapp.com/send/?phone=917302215985&text=Hi%2C+I+am+interested+in+booking+a+ride+with+NainitalCabs.+Can+you+please+share+the+available+options+and+pricing%3F&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-yellow-400 text-black font-semibold px-6 py-3 relative overflow-hidden group">
+              Book Now on WhatsApp
+              <span className="absolute top-0 right-[-8px] bottom-0 w-2 bg-black skew-x-12 group-hover:bg-white"></span>
+            </button>
+          </a>
+
+          <a href="tel:+917500769531">
+            <button className="border border-yellow-400 text-yellow-400 px-6 py-3 font-semibold hover:bg-yellow-400 hover:text-black transition">
+              Call Us
+            </button>
+          </a>
         </div>
       </motion.div>
 
@@ -38,11 +47,11 @@ const HeroSection = () => {
         className="flex-1 mt-8 md:mt-0 flex justify-center bg-black"
       >
         <div>
-        <img
-          src="/heroSection1.png"
-          alt="Taxi Service"
-          className="max-w-[280px] sm:max-w-[320px] md:max-w-[420px] w-full h-auto object-contain drop-shadow-2xl"
-        />
+          <img
+            src="/heroSection1.png"
+            alt="Taxi Service"
+            className="max-w-[280px] sm:max-w-[320px] md:max-w-[420px] w-full h-auto object-contain drop-shadow-2xl"
+          />
         </div>
       </motion.div>
     </section>

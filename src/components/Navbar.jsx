@@ -2,9 +2,6 @@ import { useState } from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
@@ -23,11 +20,6 @@ const Navbar = () => {
           <span className="flex items-center gap-2">
             <FaEnvelope /> mylackcitycabsparkservice@gmail.com
           </span>
-        </div>
-        <div className="flex items-center gap-4 text-lg">
-          <FaFacebookF className="cursor-pointer hover:text-blue-600" />
-          <FaLinkedinIn className="cursor-pointer hover:text-blue-700" />
-          <FaInstagram className="cursor-pointer hover:text-pink-500" />
         </div>
       </div>
 
@@ -52,36 +44,39 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           <ul className="flex gap-6 font-medium">
-            <li className="text-yellow-400 underline underline-offset-4">
-              Home
-            </li>
-            <li className="hover:text-yellow-400 cursor-pointer">About-Us</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Services</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Our-Vehicles</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Contact</li>
+            <li><a href="#home" className="hover:text-yellow-400">Home</a></li>
+            <li><a href="#about" className="hover:text-yellow-400">About Us</a></li>
+            <li><a href="#vehicles" className="hover:text-yellow-400">Vehicles</a></li>
+            <li><a href="#locations" className="hover:text-yellow-400">Locations</a></li>
+            <li><a href="#contact" className="hover:text-yellow-400">Contact</a></li>
           </ul>
 
-          <button className="ml-6 bg-yellow-400 text-black font-semibold px-6 py-2 relative">
-            Book a Taxi
-            <span className="absolute top-0 right-[-8px] bottom-0 w-2 bg-black skew-x-12"></span>
-          </button>
+          {/* WhatsApp Button */}
+          <a 
+            href="https://api.whatsapp.com/send/?phone=917302215985&text=Hi%2C+I+am+interested+in+booking+a+ride+with+LakeCity+Cabs&type=phone_number&app_absent=0" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="ml-6 bg-yellow-400 text-black font-semibold px-6 py-2 relative">
+              Book a Taxi
+              <span className="absolute top-0 right-[-8px] bottom-0 w-2 bg-black skew-x-12"></span>
+            </button>
+          </a>
         </div>
 
         {/* Mobile Dropdown Menu */}
         <ul
-          className={`lg:hidden absolute top-[100%] right-0 z-30 bg-yellow-600 w-1/2 h-auto text-white flex flex-col items-center gap-12 py-8 font-medium transform transition-all duration-500 ease-in-out ${
+          className={`lg:hidden absolute top-[100%] right-0 z-30 bg-yellow-600 w-1/2 h-auto text-white flex flex-col items-center gap-8 py-8 font-medium transform transition-all duration-500 ease-in-out ${
             showHamburger
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-5 pointer-events-none"
           }`}
         >
-          <li className="text-yellow-400 underline underline-offset-4">
-            Home
-          </li>
-          <li className="hover:text-yellow-400 cursor-pointer">About-Us</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Services</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Our-Vehicles</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Contact</li>
+          <li><a href="#home" onClick={() => setShowHamburger(false)}>Home</a></li>
+          <li><a href="#about" onClick={() => setShowHamburger(false)}>About Us</a></li>
+          <li><a href="#vehicles" onClick={() => setShowHamburger(false)}>Vehicles</a></li>
+          <li><a href="#locations" onClick={() => setShowHamburger(false)}>Locations</a></li>
+          <li><a href="#contact" onClick={() => setShowHamburger(false)}>Contact</a></li>
         </ul>
       </div>
     </div>
