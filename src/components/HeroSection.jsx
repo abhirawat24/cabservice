@@ -4,7 +4,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-20">
+    <section id="home" className="bg-black text-white w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-20">
       {/* Left Content */}
       <motion.div
         initial={{ x: -200, opacity: 0 }}
@@ -17,8 +17,7 @@ const HeroSection = () => {
           in Lake City
         </h1>
         <p className="text-gray-300 text-lg md:text-xl max-w-lg">
-          Book your ride instantly with our safe and comfortable taxi services.
-          Available 24/7 for your convenience.
+          24/7 taxi service for your comfort and convenience. Book your ride in seconds.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <a
