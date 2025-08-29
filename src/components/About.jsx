@@ -16,7 +16,7 @@ const About = () => {
         {/* Right: Content */}
         <div>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 leading-snug">
-            Your Travel Companion Across India,{" "}
+            Your Travel Companion Across India "2015",{" "}
             <span className="text-yellow-500">Trusted by Nainital!</span>
           </h2>
 

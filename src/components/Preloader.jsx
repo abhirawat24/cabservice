@@ -4,7 +4,6 @@ const Preloader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hide after 1.5 seconds
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -13,16 +12,20 @@ const Preloader = () => {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center bg-black z-[9999] transition-opacity duration-700 ${
+      className={`fixed inset-0 flex items-center justify-center bg-black z-[9999] h-screen w-full transition-opacity duration-700 ${
         loading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
       <img
         src="/logo.png"
-        alt="Lake City Cabs Logo"
-        className={`h-28 rounded-xl transition-all duration-700 ${
-          loading ? "scale-100 opacity-100" : "scale-125 opacity-0"
-        }`}
+        alt="Nainital Cabs Logo"
+        className={`transition-all duration-700
+          ${loading ? "scale-100 opacity-100" : "scale-125 opacity-0"}
+          h-20 sm:h-24 md:h-28
+          w-auto
+          rounded-xl
+          mx-auto
+        `}
       />
     </div>
   );

@@ -1,29 +1,41 @@
 // src/components/Vehicles.jsx
+import { motion } from "framer-motion";
+
 export default function Vehicles() {
   const vehicles = [
-    { name: "Swift Dzire", seats: "4+1", img: "/images/swift.jpg" },
     { name: "Innova Crysta", seats: "6+1", img: "/images/innova.jpg" },
+    { name: "Ertiga", seats: "6+1", img: "/images/ertiga.jpg" },
+    { name: "Swift Dzire", seats: "4+1", img: "/images/swift.jpg" },
+    { name: "Alto", seats: "4+1", img: "/images/alto.jpg" },
     { name: "Tempo Traveller", seats: "12+1", img: "/images/tempo.jpg" },
   ];
 
   return (
-    <section id="vehicles" className="py-16 bg-gray-50">
+    <section id="vehicles" className="py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Vehicles</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="text-4xl font-bold text-gray-800 mb-12">Our Vehicles</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {vehicles.map((v, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer"
             >
-              <img
-                src={v.img}
-                alt={v.name}
-                className="rounded-md h-48 w-full object-cover"
-              />
-              <h3 className="text-xl font-semibold mt-4">{v.name}</h3>
-              <p className="text-gray-600">Seating Capacity: {v.seats}</p>
-            </div>
+              <div className="overflow-hidden">
+                <img
+                  src={v.img}
+                  alt={v.name}
+                  className="w-full h-56 md:h-64 object-cover rounded-t-xl transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <h3 className="text-xl font-semibold text-gray-800">{v.name}</h3>
+                <p className="text-gray-600 mt-2">Seating Capacity: {v.seats}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
