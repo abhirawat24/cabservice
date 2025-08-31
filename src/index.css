@@ -1,0 +1,19 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/* Custom Swiper Navigation Arrows */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}

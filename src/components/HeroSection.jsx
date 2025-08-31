@@ -11,7 +11,8 @@ const HeroSection = () => {
       {/* Left Content */}
       <motion.div
         initial={{ x: -200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }} // 👈 animate when 30% is visible
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 flex flex-col gap-6 text-center md:text-left"
       >
@@ -51,7 +52,8 @@ const HeroSection = () => {
       {/* Right Image */}
       <motion.div
         initial={{ x: 200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }} // 👈 animate on scroll
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex-1 mt-8 md:mt-0 flex justify-center bg-black"
       >

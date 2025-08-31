@@ -23,7 +23,9 @@ export default function Vehicles() {
   return (
     <section id="vehicles" className="py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12">Our Vehicles</h2>
+        <h2 className="text-4xl font-bold text-gray-800 inline-block pb-3 mb-12 border-b-4 border-yellow-400">
+          Our Vehicles
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {vehicles.map((v, i) => (
@@ -48,7 +50,8 @@ export default function Vehicles() {
                   className={`transition-transform duration-500 
                               lg:hover:scale-110 
                               ${
-                                v.name === "Innova Crysta" || v.name === "Ertiga"
+                                v.name === "Innova Crysta" ||
+                                v.name === "Ertiga"
                                   ? "object-contain scale-90"
                                   : "object-contain"
                               }`}
@@ -57,8 +60,12 @@ export default function Vehicles() {
 
               {/* Details */}
               <div className="p-4 text-center flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-gray-800">{v.name}</h3>
-                <p className="text-gray-600 mt-2">Seating Capacity: {v.seats}</p>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {v.name}
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Seating Capacity: {v.seats}
+                </p>
 
                 {/* Book Now Button */}
                 <button
