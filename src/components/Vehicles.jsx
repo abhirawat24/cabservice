@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 export default function Vehicles() {
   const vehicles = [
-    { name: "Innova Crysta", seats: "6+1", img: "/images/innova.webp" },
-    { name: "Ertiga", seats: "6+1", img: "/images/ertiga.webp" },
-    { name: "Swift Dzire", seats: "4+1", img: "/images/dzire.png" },
-    { name: "Alto", seats: "4+1", img: "/images/alto.png" },
-    { name: "Tempo Traveller", seats: "12+1", img: "/images/traveller.png" },
+    { name: "Innova Crysta", seats: "6+1", img: "/innova.webp" },
+    { name: "Ertiga", seats: "6+1", img: "/ertiga.webp" },
+    { name: "Swift Dzire", seats: "4+1", img: "/dzire.png" },
+    { name: "Alto", seats: "4+1", img: "/alto.png" },
+    { name: "Tempo Traveller", seats: "12+1", img: "/traveller.png" },
   ];
 
   const whatsappNumber = "7302215985";
