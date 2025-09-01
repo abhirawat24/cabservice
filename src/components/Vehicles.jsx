@@ -23,32 +23,34 @@ export default function Vehicles() {
   return (
     <section id="vehicles" className="py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Section Heading */}
         <h2 className="text-4xl font-bold text-gray-800 inline-block pb-3 mb-12 border-b-4 border-yellow-400">
           Our Vehicles
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {/* Vehicle Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {vehicles.map((v, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: 100 }} // slide from right
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.8, delay: i * 0.15 }}
               className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg 
                          overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer
-                         relative flex flex-col"
+                         relative flex flex-col group"
             >
               {/* Yellow Taxi Accent Bar */}
               <div className="absolute top-0 left-0 w-full h-2 bg-yellow-400"></div>
 
               {/* Image wrapper */}
-              <div className="w-full h-48 md:h-56 lg:h-64 overflow-hidden flex items-center justify-center bg-white">
+              <div className="w-full h-64 overflow-hidden flex items-center justify-center bg-white">
                 <img
                   src={v.img}
                   alt={v.name}
                   className={`transition-transform duration-500 
-                              lg:hover:scale-110 
+                              lg:group-hover:scale-110 
                               ${
                                 v.name === "Innova Crysta" ||
                                 v.name === "Ertiga"
@@ -59,25 +61,58 @@ export default function Vehicles() {
               </div>
 
               {/* Details */}
-              <div className="p-4 text-center flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-gray-800">
+              <div className="p-6 text-center flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold text-gray-800 relative inline-block">
                   {v.name}
+                  {/* Hover underline animation */}
+                  <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-3">
                   Seating Capacity: {v.seats}
                 </p>
 
                 {/* Book Now Button */}
                 <button
                   onClick={() => handleBookNow(v.name)}
-                  className="mt-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold 
-                             py-2 px-5 rounded-full transition-all duration-300 shadow-md"
+                  className="mt-5 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold 
+                             py-2 px-6 rounded-full transition-all duration-300 shadow-md"
                 >
                   Book Now
                 </button>
               </div>
             </motion.div>
           ))}
+
+          {/* ✅ Extra Custom Vehicle Option Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: vehicles.length * 0.15 }}
+            className="bg-white border-2 border-yellow-400 rounded-2xl shadow-lg 
+                       p-6 flex flex-col justify-between items-center text-center 
+                       hover:shadow-2xl transform hover:scale-105 transition-all duration-500 group"
+          >
+            <h3 className="text-xl font-bold text-gray-900 relative inline-block">
+              Need a Different Ride?
+              {/* Hover underline animation */}
+              <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+            </h3>
+            <p className="text-gray-700 text-base leading-relaxed mt-4">
+              Didn’t find the vehicle you are looking for?  
+              We can arrange <span className="font-semibold">other vehicles</span> as per your need.  
+              Just ask us directly!
+            </p>
+
+            {/* WhatsApp Button */}
+            <button
+              onClick={() => handleBookNow("Custom Vehicle Option")}
+              className="mt-6 bg-green-500 hover:bg-green-600 text-white font-semibold 
+                         py-2 px-6 rounded-lg shadow-md flex items-center gap-2 transition-all"
+            >
+              <span>Chat on WhatsApp</span>
+            </button>
+          </motion.div>
         </div>
       </div>
     </section>

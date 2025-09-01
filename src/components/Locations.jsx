@@ -8,22 +8,27 @@ export default function Locations() {
   const locations = [
     {
       name: "Nainital",
-      img: "/images/nainital.jpg",
+      img: "/images/nainital_l.webp",
       desc: "Famous hill station known for Naini Lake, Mall Road, and scenic beauty.",
     },
     {
       name: "Almora",
-      img: "/images/almora.jpg",
+      img: "/images/almora_l.jpg",
       desc: "A cultural hub with Himalayan views, temples, and local traditions.",
     },
     {
       name: "Jageshwar Dham",
-      img: "/images/jageshwar.jpg",
+      img: "/images/jageshwar_l.webp",
       desc: "Ancient temple town surrounded by deodar forests, known for Jyotirlingas.",
     },
     {
+      name: "Kainchi Dham",
+      img: "/images/kaichi_dham.jpg",
+      desc: "A famous ashram established by Neem Karoli Baba, surrounded by hills and rivers.",
+    },
+    {
       name: "Ranikhet",
-      img: "/images/ranikhet.jpg",
+      img: "/images/ranikhet_l.jpg",
       desc: "Peaceful cantonment town offering panoramic views of the Himalayas.",
     },
     {
@@ -38,22 +43,22 @@ export default function Locations() {
     },
     {
       name: "Badrinath",
-      img: "/images/badrinath.jpg",
+      img: "/images/badrinath_l.jpg",
       desc: "One of the Char Dham shrines dedicated to Lord Vishnu.",
     },
     {
       name: "Kedarnath",
-      img: "/images/kedarnath.jpg",
+      img: "/images/kedarnath_l.jpg",
       desc: "Famous pilgrimage site dedicated to Lord Shiva in the Himalayas.",
     },
     {
       name: "Gangotri",
-      img: "/images/gangotri.jpg",
+      img: "/images/gangotri_l.jpg",
       desc: "Sacred town, the origin of the holy River Ganga.",
     },
     {
       name: "Yamunotri",
-      img: "/images/yamunotri.jpg",
+      img: "/images/yamunotri_l.webp",
       desc: "One of the Char Dhams, source of the holy Yamuna River.",
     },
   ];
@@ -70,37 +75,38 @@ export default function Locations() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {locations.map((l, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 1.1,
-                delay: i * 0.15,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-              className="bg-white border border-gray-200 shadow-lg rounded-2xl overflow-hidden 
-                         hover:shadow-2xl hover:border-yellow-400 transition transform hover:scale-105 cursor-pointer group"
-              onClick={() => setSelectedPlace(l)}
-            >
-              <div className="h-52 w-full overflow-hidden">
-                <img
-                  src={l.img}
-                  alt={l.name}
-                  className="h-full w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-gray-800 relative inline-block">
-                  {l.name}
-                  {/* Hover underline animation */}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
-                </h3>
-                <p className="text-gray-600 text-base leading-relaxed mt-3">
-                  {l.desc}
-                </p>
-              </div>
-            </motion.div>
+  key={i}
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{
+    duration: 1.1,
+    delay: i * 0.15,
+    ease: [0.25, 0.1, 0.25, 1],
+  }}
+  className="bg-white border border-gray-200 shadow-lg rounded-2xl overflow-hidden 
+             hover:shadow-2xl hover:border-yellow-400 transition transform hover:scale-105 cursor-pointer group"
+  onClick={() => setSelectedPlace(l)}
+>
+  {/* Bigger Image Box */}
+  <div className="h-64 w-full overflow-hidden">  
+    <img
+      src={l.img}
+      alt={l.name}
+      className="h-full w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+    />
+  </div>
+
+  {/* More Padding for Text */}
+  <div className="p-6">  
+    <h3 className="text-xl font-semibold text-gray-800 relative inline-block">
+      {l.name}
+      <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
+    </h3>
+    <p className="text-gray-600 text-base leading-relaxed mt-4">{l.desc}</p>
+  </div>
+</motion.div>
+
           ))}
 
           {/* ✅ Extra Custom Route Box */}
