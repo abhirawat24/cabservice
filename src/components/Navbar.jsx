@@ -36,7 +36,7 @@ const Navbar = () => {
             <FaPhoneAlt /> +91 7902129644
           </a>
           <a
-            href="mailto:pankajmanral218@gmail.com?subject=Cab%20Booking%20Inquiry&body=Hi,%20I%20am%20interested%20in%20booking%20a%20ride%20with%20Nainital%20Cabs.%20Can%20you%20please%20share%20the%20available%20options%20and%20pricing?"
+            href="mailto:nainitalcabs2015@gmail.com?subject=Cab%20Booking%20Inquiry&body=Hi,%20I%20am%20interested%20in%20booking%20a%20ride%20with%20Nainital%20Cabs.%20Can%20you%20please%20share%20the%20available%20options%20and%20pricing?"
             className="flex items-center gap-2 cursor-pointer hover:text-amber-100 text-lg"
           >
             <FaEnvelope /> E-mail

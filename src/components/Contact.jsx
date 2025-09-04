@@ -33,7 +33,7 @@ export default function Contact() {
 
             {/* Gmail Button */}
             <a
-              href="mailto:pankajmanral218@gmail.com"
+              href="mailto:nainitalcabs2015@gmail.com"
               className="flex items-center gap-3 border-2 border-red-500 bg-red-50 text-red-600 px-8 py-4 rounded-xl hover:bg-red-500 hover:text-white hover:shadow-lg transition text-lg font-medium w-full sm:w-auto justify-center"
             >
               <FaEnvelope className="text-2xl" /> Gmail
